@@ -17,6 +17,8 @@ struct ContentView : View {
     @ObservedObject var keyboardMonitor: KeyboardMonitor = KeyboardMonitor()
     @State var keyboardStatusInfo: String = ""
     
+    @State var keyboardStatus: KeyboardMonitor.Status = .hide
+    
     var body: some View{
         VStack(alignment: .leading){
             VStack(alignment: .leading, spacing: 0) {
@@ -30,6 +32,7 @@ struct ContentView : View {
             .background(RoundedRectangle(cornerRadius: 10).fill(.yellow))
             .onReceive(self.keyboardMonitor.updatedKeyboardStatusAction, perform: {
                 self.keyboardStatusInfo = $0.description
+                self.keyboardStatus = $0
             })
             VStack(alignment: .leading) {
                 Text("이름")
@@ -52,6 +55,15 @@ struct ContentView : View {
             
             Rectangle().fill(Color.red).frame(maxHeight: 300)
             
+            ScrollView {
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("주의사항")
+                    Text("sajdflsajfladshfksanfkjzsndkfjznxjvnzsldnfoiajflkasmdflksdmfkzmolvjzxclvlzkxmlvkcmxlkzvnzxlcnvlkcnxjvnxcjnvlkxcmvlkxczmvlkxcmvlxkvmohoafekmwflkmlkvmzxoicvjoxzkcmvlzxkmvl\nafosdjfosiafjalskdmlkxzfmvlkxcvlkxzjcvlkzxcjvlkxzjcvoijlwakrmlksmvlksd\naosidfjaowijfalksvmnozxhuoxvmlkxcnvoshofajsdoimvlkzmxlkvhoajfoisd\nasdljfsadljoiszjvoizsdjvlkzsmdlvkznsdlkvjsaoivjjasdfoisajflkadsmflksmflzkxdfoisdjfoasdjflksdmflkzdxmfoizsdjfosdmflkasdmflka\nasdiofjdsoifjalsdfsadflksajdfsa\nasdiofjsaiofjslkzmxlkvmxcoivjozijcxvlkxmclkvzxnvoixzjnvoxkzmvlkcxmvlkzxvlkzxcjvoicxzcjvoxckmvlkxcmvlcxkvjoizxjcvoxzjvoizxsajdflsajfladshfksanfkjzsndkfjznxjvnzsldnfoiajflkasmdflksdmfkzmolvjzxclvlzkxmlvkcmxlkzvnzxlcnvlkcnxjvnxcjnvlkxcmvlkxczmvlkxcmvlxkvmohoafekmwflkmlkvmzxoicvjoxzkcmvlzxkmvl\nafosdjfosiafjalskdmlkxzfmvlkxcvlkxzjcvlkzxcjvlkxzjcvoijlwakrmlksmvlksd\naosidfjaowijfalksvmnozxhuoxvmlkxcnvoshofajsdoimvlkzmxlkvhoajfoisd\nasdljfsadljoiszjvoizsdjvlkzsmdlvkznsdlkvjsaoivjjasdfoisajflkadsmflksmflzkxdfoisdjfoasdjflksdmflkzdxmfoizsdjfosdmflkasdmflka\nasdiofjdsoifjalsdfsadflksajdfsa\nasdiofjsaiofjslkzmxlkvmxcoivjozijcxvlkxmclkvzxnvoixzjnvoxkzmvlkcxmvlkzxvlkzxcjvoicxzcjvoxckmvlkxcmvlcxkvjoizxjcvoxzjvoizxsajdflsajfladshfksanfkjzsndkfjznxjvnzsldnfoiajflkasmdflksdmfkzmolvjzxclvlzkxmlvkcmxlkzvnzxlcnvlkcnxjvnxcjnvlkxcmvlkxczmvlkxcmvlxkvmohoafekmwflkmlkvmzxoicvjoxzkcmvlzxkmvl\nafosdjfosiafjalskdmlkxzfmvlkxcvlkxzjcvlkzxcjvlkxzjcvoijlwakrmlksmvlksd\naosidfjaowijfalksvmnozxhuoxvmlkxcnvoshofajsdoimvlkzmxlkvhoajfoisd\nasdljfsadljoiszjvoizsdjvlkzsmdlvkznsdlkvjsaoivjjasdfoisajflkadsmflksmflzkxdfoisdjfoasdjflksdmflkzdxmfoizsdjfosdmflkasdmflka\nasdiofjdsoifjalsdfsadflksajdfsa\nasdiofjsaiofjslkzmxlkvmxcoivjozijcxvlkxmclkvzxnvoixzjnvoxkzmvlkcxmvlkzxvlkzxcjvoicxzcjvoxckmvlkxcmvlcxkvjoizxjcvoxzjvoizxsajdflsajfladshfksanfkjzsndkfjznxjvnzsldnfoiajflkasmdflksdmfkzmolvjzxclvlzkxmlvkcmxlkzvnzxlcnvlkcnxjvnxcjnvlkxcmvlkxczmvlkxcmvlxkvmohoafekmwflkmlkvmzxoicvjoxzkcmvlzxkmvl\nafosdjfosiafjalskdmlkxzfmvlkxcvlkxzjcvlkzxcjvlkxzjcvoijlwakrmlksmvlksd\naosidfjaowijfalksvmnozxhuoxvmlkxcnvoshofajsdoimvlkzmxlkvhoajfoisd\nasdljfsadljoiszjvoizsdjvlkzsmdlvkznsdlkvjsaoivjjasdfoisajflkadsmflksmflzkxdfoisdjfoasdjflksdmflkzdxmfoizsdjfosdmflkasdmflka\nasdiofjdsoifjalsdfsadflksajdfsa\nasdiofjsaiofjslkzmxlkvmxcoivjozijcxvlkxmclkvzxnvoixzjnvoxkzmvlkcxmvlkzxvlkzxcjvoicxzcjvoxckmvlkxcmvlcxkvjoizxjcvoxzjvoizx")
+                        .font(.caption)
+                }
+            }
+            .frame(height: keyboardStatus == .show ? 300 : 0)
+            
             GeometryReader { proxy in
                 Button {
                     print("회원가입 버튼 클릭")
@@ -64,6 +76,7 @@ struct ContentView : View {
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 10).fill(.yellow))
             }
+            .padding(.bottom, keyboardStatus == .show ? 100 : 0)
         }// VStack
         .background(Color.purple)
         .padding(.horizontal, 20)
