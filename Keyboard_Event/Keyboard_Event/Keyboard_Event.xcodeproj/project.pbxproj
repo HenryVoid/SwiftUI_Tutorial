@@ -11,6 +11,7 @@
 		6C4D369B2806BA5300435CDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D369A2806BA5300435CDF /* ContentView.swift */; };
 		6C4D369D2806BA5600435CDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D369C2806BA5600435CDF /* Assets.xcassets */; };
 		6C4D36A02806BA5600435CDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C4D369F2806BA5600435CDF /* Preview Assets.xcassets */; };
+		6C4D36A72806BCF700435CDF /* KeyboardMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4D36A62806BCF700435CDF /* KeyboardMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		6C4D369A2806BA5300435CDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6C4D369C2806BA5600435CDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C4D369F2806BA5600435CDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6C4D36A62806BCF700435CDF /* KeyboardMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				6C4D369A2806BA5300435CDF /* ContentView.swift */,
 				6C4D369C2806BA5600435CDF /* Assets.xcassets */,
 				6C4D369E2806BA5600435CDF /* Preview Content */,
+				6C4D36A62806BCF700435CDF /* KeyboardMonitor.swift */,
 			);
 			path = Keyboard_Event;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C4D369B2806BA5300435CDF /* ContentView.swift in Sources */,
+				6C4D36A72806BCF700435CDF /* KeyboardMonitor.swift in Sources */,
 				6C4D36992806BA5300435CDF /* Keyboard_EventApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

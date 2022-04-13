@@ -14,8 +14,23 @@ struct ContentView : View {
     @State var passwordInput: String = ""
     @State var passwordConfirmInput: String = ""
     
+    @ObservedObject var keyboardMonitor: KeyboardMonitor = KeyboardMonitor()
+    @State var keyboardStatusInfo: String = ""
+    
     var body: some View{
         VStack(alignment: .leading){
+            VStack(alignment: .leading, spacing: 0) {
+                Text("키보드 상태").font(.title2)
+                Divider().colorMultiply(.clear).padding(.vertical, 5)
+//                Text(keyboardMonitor.updatedKeyboardStatusAction.description) // 1
+                Text(keyboardStatusInfo)
+                Text("높이 : \(keyboardMonitor.keyboardHeight)")
+            }
+            .padding()
+            .background(RoundedRectangle(cornerRadius: 10).fill(.yellow))
+            .onReceive(self.keyboardMonitor.updatedKeyboardStatusAction, perform: {
+                self.keyboardStatusInfo = $0.description
+            })
             VStack(alignment: .leading) {
                 Text("이름")
                 TextField("이름을 입력해주세요", text: $nameInput).keyboardType(.default).autocapitalization(.none)
