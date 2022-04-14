@@ -12,6 +12,8 @@
 		6CA817BF2807E09700B2FAB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CA817BE2807E09700B2FAB3 /* Assets.xcassets */; };
 		6CA817C22807E09700B2FAB3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CA817C12807E09700B2FAB3 /* Preview Assets.xcassets */; };
 		6CA817CA2807E39A00B2FAB3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 6CA817C92807E39A00B2FAB3 /* Lottie */; };
+		6CA817CC2807E4BE00B2FAB3 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA817CB2807E4BE00B2FAB3 /* LottieView.swift */; };
+		6CA817CE2807E55900B2FAB3 /* LoadingLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 6CA817CD2807E55900B2FAB3 /* LoadingLottie.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		6CA817BC2807E09500B2FAB3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6CA817BE2807E09700B2FAB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6CA817C12807E09700B2FAB3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6CA817CB2807E4BE00B2FAB3 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		6CA817CD2807E55900B2FAB3 /* LoadingLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = LoadingLottie.json; path = ../../../../../../Downloads/LoadingLottie.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +57,12 @@
 		6CA817B92807E09500B2FAB3 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				6CA817CD2807E55900B2FAB3 /* LoadingLottie.json */,
 				6CA817BA2807E09500B2FAB3 /* SplashScreenApp.swift */,
 				6CA817BC2807E09500B2FAB3 /* ContentView.swift */,
 				6CA817BE2807E09700B2FAB3 /* Assets.xcassets */,
 				6CA817C02807E09700B2FAB3 /* Preview Content */,
+				6CA817CB2807E4BE00B2FAB3 /* LottieView.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -133,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CA817CE2807E55900B2FAB3 /* LoadingLottie.json in Resources */,
 				6CA817C22807E09700B2FAB3 /* Preview Assets.xcassets in Resources */,
 				6CA817BF2807E09700B2FAB3 /* Assets.xcassets in Resources */,
 			);
@@ -147,6 +154,7 @@
 			files = (
 				6CA817BD2807E09500B2FAB3 /* ContentView.swift in Sources */,
 				6CA817BB2807E09500B2FAB3 /* SplashScreenApp.swift in Sources */,
+				6CA817CC2807E4BE00B2FAB3 /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,9 @@ struct ContentView: View {
             Text("Hello, world!")
                 .padding()
             if !isContentReady {
-                mySplashScreenView.transition(.opacity)
+                LottieView(jsonName: "LoadingLottie")
+                    .transition(.opacity)
+//                mySplashScreenView.transition(.opacity)
             }
         }
         .onAppear {
